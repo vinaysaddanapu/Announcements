@@ -1,0 +1,30 @@
+
+<nav>
+  <h1> <span>Omniwyse Announcements</span></h1>
+</nav>
+
+<body>
+<div fxLayoutAlign = "center center" fxFlexFill class = "main-div">
+
+    <mat-card fxFlex = "25" >
+        <form fxLayoutAlign = "stretch" fxLayout = "column" class="login-form" [formGroup] = "formGroup" (ngSubmit)="loginProcess()">
+          <h2 align="center">Login Page</h2>
+          <label>Username</label>
+          <br>
+            <mat-form-field class="example-full-width">
+              <input matInput  formControlName="email_id">
+            </mat-form-field>
+            <br>
+             <label>Password</label>
+             <br>
+            <mat-form-field class="example-full-width">
+                <input matInput type = "password" formControlName="password">
+              </mat-form-field>
+              <br>
+              <button mat.raised.button color = "primary" type="submit" id="login-button" >login</button>
+            </form>
+
+          
+    </mat-card>
+  </div>
+</body>
