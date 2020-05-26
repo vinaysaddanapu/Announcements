@@ -1,9 +1,9 @@
 var announcements = require('./CreateAnnouncement');
 var express = require('express');
 var app = express();
+var tagsController = require('./TagsController');
 var conn =require('./db');
 var User = require('./users');
-var Tags = require('./tags');
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
@@ -31,7 +31,6 @@ User.findOne({email_id:uname, password:pass}, function(err, result){
      res.status(500).send("Internal server Error");
     }else{
         if(result){
-            if(result.isAdmin){
                 jwt.sign({result}, 'secretkey',(err, token)=>{
                   res.send({
                     id:result._id,  
@@ -43,17 +42,6 @@ User.findOne({email_id:uname, password:pass}, function(err, result){
                   })
 
                 })
-
-            }else{
-                res.send({
-                    id:result._id,
-                    name:result.name,
-                    email_id:result.email_id,
-                    isAdmin:result.isAdmin
-
-                })
-            }
-
         }else{
             res.status(404).send('User not found');
         }
@@ -107,18 +95,9 @@ app.get('/getAll',  verifyToken, announcements.getAnnouncement);
 
 app.get('/announcement/:id', announcements.getAnnouncementById);
 
-app.get('/tags', function(req, res){
- 
- Tags.find({},function(err, tags){
-     if(err){
-         res.status(403).send("Error in getting Tags");
-     }else{
-         res.send(tags);
-     }
- });
+app.get('/announcementbytags/:tags', verifyToken, announcements.findAnnouncementByTags);
 
-});
-
+app.get('/userintags/:userid', verifyToken, tagsController.findUserInTags);
 
 app.listen(8081,()=>{
 
