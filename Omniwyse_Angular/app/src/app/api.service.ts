@@ -38,8 +38,16 @@ getTags():Observable<any>{
     return this.httpClient.get(environment.api+'/getAll');
   }
 
-  getAnnouncementById(id: number):Observable<any>{
-    return this.httpClient.get(environment.api+'/announcement/:'+id);
+  getAnnouncementById(id):Observable<any>{
+    return this.httpClient.get(environment.api+'/announcement/'+id);
+  }
+
+  getTagsByUserId(userid:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/userintags/'+'"'+userid+'"');
+  }
+
+  getAnnouncementByTags(tags:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/announcementbytags/'+tags);
   }
 
 }
