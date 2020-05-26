@@ -1,21 +1,29 @@
 <h1>{{title}}</h1>
 <br>
 <body>
-<div class="container">
+
   <form [formGroup] ="notificationForm">
-    <div class="row">
-      <div class="col-25">
-        <label for="tags">Tags</label>
-      </div>
-      <div class="col-75">
-          <select  formControlName="tags" id="tags">
-          <option value="" disabled>Select the tag</option> 
-          <option value="interns">Interns</option>
-          <option value= "employees">Employees</option>
-          <option value="techLead">Tech Lead</option>
-          </select>
-        </div>
+    <div class="Divtags">
+      <h1>Add Tags</h1>
+      <select  formControlName="tags" id="tags">
+     <option value="" disabled>Select the tag</option> 
+     <option value="interns">Interns</option>
+     <option value= "employees">Employees</option>
+     <option value="techLead">Tech Lead</option>
+     </select>
+     <br>
+     <br>
+     <br>
+      <h2> Selected:</h2>
+     <div class="listTags">
+ <p *ngFor="let tag of tagList">{{tag}}</p><br><br>
+     </div>
+     <div class="tagBtn">
+      <input type="button" value="Cancel" id="tagBtn2" (click)="cancel()">
+     <input type  ="button" value = "Add tag" (click)="addToTags()" style="color:white;background-color:#0F9D58;" id="tagBtn3">
+    </div>
    </div>
+    <div class="container">
   <div class="row">
     <div class="col-25">
       <label for="fname">Title</label>
@@ -58,12 +66,9 @@
   </div>
   <div class="row">
     <input type="submit" value="Announce Now" (click)="postAnnouncement()">
-    <mat-form-field class="example-full-width">
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <button mat-raised-button (click)="picker.open()">Schedule</button>
+    <input type="datetime-local" formControlName="scheduledTime" id="schedule">
+    <input type="button" value="Schedule" (click)="postAnnouncement(); announcementSchedule()" id="schbtn">
     </div>
+  </div>
   </form>
-</div>
 </body>
