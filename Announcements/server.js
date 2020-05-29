@@ -2,6 +2,7 @@ var announcements = require('./CreateAnnouncement');
 var express = require('express');
 var app = express();
 var tagsController = require('./TagsController');
+var updateAnnouncement = require('./UpdateAnnouncement');
 var conn =require('./db');
 var User = require('./users');
 var bodyParser = require('body-parser');
@@ -98,6 +99,10 @@ app.get('/announcement/:id', announcements.getAnnouncementById);
 app.get('/announcementbytags/:tags', verifyToken, announcements.findAnnouncementByTags);
 
 app.get('/userintags/:userid', verifyToken, tagsController.findUserInTags);
+
+app.put('/update/:id', updateAnnouncement.update);
+
+app.delete('/delete/:id', updateAnnouncement.delete);
 
 app.listen(8081,()=>{
 
