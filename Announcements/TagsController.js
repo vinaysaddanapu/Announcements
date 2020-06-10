@@ -1,4 +1,4 @@
-const Tags = require('./tags');
+const Tags = require('./models/tags');
 const jwt = require('jsonwebtoken');
 
 exports.findUserInTags = function(req, res){
