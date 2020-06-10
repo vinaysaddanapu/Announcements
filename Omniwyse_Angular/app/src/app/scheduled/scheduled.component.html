@@ -1,0 +1,21 @@
+  <h1>Scheduled Annoucements</h1>
+  <br>
+  <br>
+          <ul *ngFor="let post of postList"  class="text1">
+                 <p>{{post.title}}</p>
+                  <b> Scheduled on : {{post.scheduledDate | date :'medium'}}</b>
+            <div>
+              <br>
+                  <div [innerHTML]="post.subject"></div><br>
+            </div>
+            <div class="btn">
+            <button (click) ="goToNotification(post._id)" id="viewbtn"  >View</button>
+            &nbsp;&nbsp;
+            <button (click)="deleteAnnouncement(post._id); deleteAlert()" id="deletebtn">Delete</button>
+            &nbsp;&nbsp;
+            <button (click) ="goToUpdate(post._id)" id="editbtn" >Edit</button>
+          </div>
+          <hr>
+          
+          </ul>
+    
