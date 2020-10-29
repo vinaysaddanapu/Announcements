@@ -3,9 +3,11 @@
   <div class="ankor">
     <span>Hi, {{name}}</span>
     <span><a routerLink ="/notification">Create</a></span>
+
     <span><a routerLink ="/about">About</a></span>
     <span style="float:right"><a href="" (click)="logout()">log out</a></span>
-  </div>
+    <span><a routerLink ="/scheduled">Scheduled</a></span>
+  div>
 </mat-toolbar>
 <br>
 <h1>{{message}}</h1>
@@ -25,3 +27,6 @@
         </ul>
   
      <router-outlet></router-outlet>
+        
+        </ul>
+

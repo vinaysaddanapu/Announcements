@@ -1,0 +1,29 @@
+:host {
+  font-size: 11px;
+}
+h6 {
+  margin: 8px 0;
+}
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  background-color: #5b8eee;
+  color: white;
+  font-weight: 300;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}

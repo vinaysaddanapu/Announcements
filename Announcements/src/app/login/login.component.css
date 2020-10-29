@@ -1,0 +1,52 @@
+.main-div mat-card{
+    padding: 0px;
+    
+}
+.login-form{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    font-size:16px;
+    background-color:white;
+    
+   
+}
+#login-button{
+    height: 30px;
+    align-items: center;
+    object-position: center;
+    font-size: 16px;
+}
+
+#input{
+    height: 50px;
+    margin: 8px 0;
+    
+}
+
+nav{
+
+    background-color:#0F9D58;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+/*.main-div{
+    box-shadow: white;
+     visibility: visible;
+
+}*/
+
+.example-full-width{
+    border: 2px solid #0F9D58;
+    padding: 8px 12px;
+
+}
+
+body{
+    background-size:cover;
+    width:auto;
+    background-image:url('/assets/scenary.jpg');
+    background-position:50% 50%;
+    
+}

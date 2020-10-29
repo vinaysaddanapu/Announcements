@@ -8,14 +8,15 @@ import {AuthServiceService} from '../api.service';
   styleUrls: ['./view-notification.component.css']
 })
 export class ViewNotificationComponent implements OnInit {
-  public postList: any = [];
+  public postList: any = {};
   public id: number;
 
 
-  constructor(private authService: AuthServiceService, private router: ActivatedRoute) { }
+  constructor(private authService: AuthServiceService, private router: ActivatedRoute,private route : Router) { }
 
 
 getAnnouncementById(id){
+  id=this.router.snapshot.params['id']
   this.authService.getAnnouncementById(id).subscribe(result =>{
     console.log(result);
     this.postList = result;
@@ -29,5 +30,8 @@ getAnnouncementById(id){
 ngOnInit() {
    this.getAnnouncementById(this.router.snapshot.params['id']); 
 
+}
+goToNotification(id){
+  this.route.navigate(['/view-notification',id]);
 }
 }

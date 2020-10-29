@@ -1,0 +1,69 @@
+<h1>{{title}}</h1>
+<br>
+<body>
+<div class="container">
+  <form [formGroup] ="notificationForm">
+    <div class="row">
+      <div class="col-25">
+        <label for="tags">Tags</label>
+      </div>
+      <div class="col-75">
+          <select  formControlName="tags" id="tags">
+          <option value="" disabled>Select the tag</option> 
+          <option value="interns">Interns</option>
+          <option value= "employees">Employees</option>
+          <option value="techLead">Tech Lead</option>
+          </select>
+        </div>
+   </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Title</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" placeholder="Title" formControlName="title">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Subject</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" placeholder="Subject" formControlName="subject">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Description</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" placeholder="Describe Here.." style="height:200px" formControlName="description"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="urlname">Link</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="url" placeholder="Enter the url" formControlName="link">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Image</label>
+    </div>
+    <div class="col-75">
+      <input type="file" id="inp" (change)="onFileSelected($event)">
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="Announce Now" (click)="postAnnouncement()">
+    <mat-form-field class="example-full-width">
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button (click)="picker.open()">Schedule</button>
+    </div>
+  </form>
+</div>
+</body>

@@ -1,0 +1,119 @@
+
+  .navbar{
+    justify-content: space-between;
+    position: sticky; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+     width: 100%; 
+
+  }
+
+  .ankor a{
+    color:white;
+    text-decoration: none;
+  }
+
+  span{
+    padding-right: 2rem;
+    color:white;    
+
+  }
+  
+  li a {
+    display: block;
+    color:#666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+  }
+  
+  li a:hover:not(.active) {
+    background-color:#4CAF50;
+    color:white;
+  }
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    background-color: #5b8eee;
+    color: white;
+    font-weight: 300;
+  }
+  .span1{
+    padding-right: 12em;
+    position: absolute; 
+    font-size: medium;
+  }
+  
+  .btn {
+    float:right;
+    margin-top:-70px;
+    margin-right:80px;
+        }  
+    
+
+ .header{
+   text-align: center;
+ } 
+
+ 
+ .grid-container{
+   display: grid;
+
+ }
+
+ 
+  
+ .mat-toolbar.mat-primary {
+  background:#0F9D58;
+  color: #fff;
+}
+
+#icon{
+      margin-left:350px;
+      margin-bottom: 125px;
+}
+
+.btn{
+    background-color:white ;
+    color: #0F9D58;
+
+}
+h1{
+  text-align:center;
+}
+
+p{
+  font-size:22px;
+}
+#viewbtn
+{
+  background-color:#F4B400;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#editbtn
+{
+  background-color:#0F9D58;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#deletebtn
+{
+  background-color:#DB4437;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

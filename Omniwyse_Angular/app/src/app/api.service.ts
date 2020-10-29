@@ -46,8 +46,33 @@ getTags():Observable<any>{
     return this.httpClient.get(environment.api+'/userintags/'+'"'+userid+'"');
   }
 
+
+  getTagsByUserId(userid:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/userintags/'+'"'+userid+'"');
+  }
+
   getAnnouncementByTags(tags:String):Observable<any>{
     return this.httpClient.get(environment.api+'/announcementbytags/'+tags);
   }
+ 
+  getDelete(id):Observable<any>{
+    return this.httpClient.delete(environment.api+'/delete/'+id);
+  }
+  getScheduledAnnouncement():Observable<any>{
+    return this.httpClient.get(environment.api+'/scheduled');
+  }
+  editAnnouncement(id,data):Observable<any>{
 
+    return this.httpClient.put(environment.api+'/update/'+id,data)
+  }
+  pushNotification(pushNotificationData :any):Observable<any>{
+    return this.httpClient.post(environment.api+'/firebase/notification',pushNotificationData);
+  }
+
+  getDeviceTokens():Observable<any>{
+    return this.httpClient.get(environment.api+'/devicetoken');
+  }
+  viewScheduledAnnouncement(id):Observable<any>{
+    return this.httpClient.get(environment.api+'/getScheduled/'+id);
+  }
 }
