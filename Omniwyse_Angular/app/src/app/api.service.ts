@@ -46,6 +46,11 @@ getTags():Observable<any>{
     return this.httpClient.get(environment.api+'/userintags/'+'"'+userid+'"');
   }
 
+
+  getTagsByUserId(userid:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/userintags/'+'"'+userid+'"');
+  }
+
   getAnnouncementByTags(tags:String):Observable<any>{
     return this.httpClient.get(environment.api+'/announcementbytags/'+tags);
   }

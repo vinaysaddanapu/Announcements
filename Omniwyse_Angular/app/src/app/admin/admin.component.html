@@ -3,10 +3,11 @@
   <div class="ankor">
     <span>Hi, {{name}}</span>
     <span><a routerLink ="/notification">Create</a></span>
-    <span><a routerLink ="/scheduled">Scheduled</a></span>
+
     <span><a routerLink ="/about">About</a></span>
-    <span style="float:right"><a routerLink ="" (click)="logout()">Logout</a></span>
-  </div>
+    <span style="float:right"><a href="" (click)="logout()">log out</a></span>
+    <span><a routerLink ="/scheduled">Scheduled</a></span>
+  div>
 </mat-toolbar>
 <br>
 <h1>{{message}}</h1>
@@ -20,7 +21,12 @@
             <br>
                 <div [innerHTML]="post.subject"></div><br>
           </div>
-          
+          <mat-card-actions>
             <button (click)="goToNotification(post._id)" mat-button color="primary" class="btn">View Notification</button>
+          </mat-card-actions> 
+        </ul>
+  
+     <router-outlet></router-outlet>
         
         </ul>
+
